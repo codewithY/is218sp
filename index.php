@@ -1,6 +1,9 @@
 <?php
 
-  echo '<a href="?page=php">PHP Menu</a></br>';
+  echo '<a href="?page=soap&soapType=good">Good Soap Menu</a></br>';
+  echo '<a href="?page=soap&soapType=bad">bad Soap Menu</a></br>';
+  echo '<a href="?page=soap&soapType=green">green Soap Menu</a></br>';
+  echo '<a href="?page=soap&soapType=red">red Soap Menu</a></br>';
   echo '<a href="?page=xml">XML Menu</a></br>';
   echo '<a href="?page=python">Python Menu</a></br>';
   echo '<a href="?page=java">Java Menu</a></br>';
@@ -16,7 +19,13 @@
 
   }
 
-  class php extends page {}
+  class soap extends page {
+  
+      function __construct() {
+        echo 'Type of soap requested: ' . $_REQUEST['soapType'];
+      }
+  
+  }
   class xml extends page {
      function __construct() {
       
